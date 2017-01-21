@@ -1,4 +1,4 @@
-# dotfiles
+# Turnspike Dotfiles
 
 Nix configuration managed by homeshick.
 
