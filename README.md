@@ -1,7 +1,8 @@
 # dotfiles
 
-homeshick based configuration
+Nix configuration managed by homeshick.
 
+  * zsh
   * vim
   * spacemacs
   * byobu
