@@ -4,7 +4,7 @@ ZSTART=$(date +%s%N | cut -b1-13) # startup timer
 ZCONF=$HOME/.zsh # we keep zsh config in ~/.zsh, eg symlinked from multiple gnu stow repos
 source $ZCONF/colors.zsh # load color definitions for pretty output
 
-pp_title "ʕっ•ᴥ•ʔっ.... starting zsh "
+pp_title "ʕっ•ᴥ•ʔっ.... starting zsh"
 pp_msg "☯ zsh v$ZSH_VERSION" # display zsh version info
 
 #-- initial custom actions such as mounting encrypted dropbox folders

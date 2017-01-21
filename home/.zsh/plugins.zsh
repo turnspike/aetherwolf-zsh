@@ -4,14 +4,9 @@
 #   https://github.com/andsens/homeshick
 
 export HS_HOME=$HOME/.homesick/repos/homeshick
-
-#-- install hs if needed
-if [[ ! -d $HS_HOME ]]; then
-  git clone git://github.com/andsens/homeshick.git $HS_HOME
-fi
-
-#-- init hs
-source $HS_HOME/homeshick.sh
+source $HS_HOME/homeshick.sh # init
+fpath=($HS_HOME/completions $fpath) # add hs to zsh autocompletion path
+homeshick --quiet refresh # update configs from git
 
 #-- use zplug plugin manager:
 #   https://github.com/zplug/zplug
