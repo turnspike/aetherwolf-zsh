@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 ZSTART=$(date +%s%N | cut -b1-13) # startup timer
+XDG_CONFIG_HOME=$HOME/.config
 ZCONF=$HOME/.zsh # we keep zsh config in ~/.zsh, eg symlinked from multiple gnu stow repos
 source $ZCONF/colors.zsh # load color definitions for pretty output
 

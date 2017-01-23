@@ -1,2 +1,2 @@
 BYOBU_DATE="%Y-%m-%d "
-BYOBU_TIME="%H:%M"
+BYOBU_TIME="%H:%M "
