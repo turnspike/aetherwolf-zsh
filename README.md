@@ -6,3 +6,7 @@ Nix configuration managed by homeshick.
   * vim
   * spacemacs
   * byobu
+  
+# Installation
+
+./install.sh
