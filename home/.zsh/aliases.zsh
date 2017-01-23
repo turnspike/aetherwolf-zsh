@@ -7,8 +7,7 @@ alias ..="cd .."
 
 #-- reload various things, eg to apply config changes w
 alias reload-zsh="zplug clean;source ~/.zshrc"
-#alias reload-omz="source $ZSH/oh-my-zsh.sh"
-alias reload-tmux="tmux source-file ~/.tmux.conf"
+#alias reload-tmux="tmux source-file ~/.tmux.conf"
 alias reload-byobu="tmux source-file ~/.byobu/.tmux.conf"
 
 #-- zsh "bookmark" plugin commands
@@ -48,6 +47,7 @@ alias eg="emacsclient -c -n -a ''" # gui emacs
 alias emacsbare="emacs -nw -Q --eval \"(load-theme 'misterioso)\""
 alias g="git"
 alias hs="homeshick"
+alias n="neovim"
 alias v="vim"
 
 #-- misc

@@ -16,10 +16,11 @@ call plug#begin('~/.vim/plugged')
 " --- colorschemes
 Plug 'captbaritone/molokai'
 Plug 'chriskempson/vim-tomorrow-theme'
-Plug 'altercation/vim-colors-solarized'
-Plug 'fxn/vim-monochrome'
-Plug 'chriskempson/base16-vim'
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'fxn/vim-monochrome'
+" Plug 'chriskempson/base16-vim'
 Plug 'NLKNguyen/papercolor-theme'
+" Plug 'flazz/vim-colorschemes'
 
 "-- extensions
 
@@ -185,7 +186,7 @@ let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_splits = 0
-let g:airline_theme = 'PaperColor'
+let g:airline_theme = 'powerlineish'
 
 " start screen menu
 Plug 'mhinz/vim-startify'
