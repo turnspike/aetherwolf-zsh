@@ -7,8 +7,6 @@ alias ..="cd .."
 
 #-- reload various things, eg to apply config changes w
 alias reload-zsh="zplug clean;source ~/.zshrc"
-#alias reload-tmux="tmux source-file ~/.tmux.conf"
-alias reload-byobu="tmux source-file ~/.byobu/.tmux.conf"
 
 #-- zsh "bookmark" plugin commands
 alias ba="bookmark" # add bookmark for current directory to list
@@ -19,15 +17,6 @@ alias bd="deletemark" # delete bookmark x
 #-- temp bookmark commands
 alias b='export hdbook=$(pwd)' # bookmark current directory
 alias r='cd "$hdbook"' # return to previously bookmarked directory
-
-#-- tmux commands (but I mostly use Byobu now)
-alias ta="tmux new-session -A -s"
-alias ts="tmux switch -t"
-alias tl="tmux list-sessions"
-alias td="tmux detach"
-alias tk="tmux kill-session -t"
-alias tka="tmux kill-session -a"
-#alias tka="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
 
 #-- byobu commands
 alias bb="byobu"
@@ -47,7 +36,8 @@ alias eg="emacsclient -c -n -a ''" # gui emacs
 alias emacsbare="emacs -nw -Q --eval \"(load-theme 'misterioso)\""
 alias g="git"
 alias hs="homeshick"
-alias n="neovim"
+alias n="nvim"
+alias nv="nvim"
 alias v="vim"
 
 #-- misc
