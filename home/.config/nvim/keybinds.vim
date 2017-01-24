@@ -1,3 +1,5 @@
+"-- note: plugin specific keybinds live in plugins.vim
+
 " use space as leader key
 let mapleader = "\<Space>"
 " let maplocalleader = ","
@@ -8,19 +10,11 @@ imap <S-CR> <Esc>
 
 "-- splits
 
-" quicker window movement
-nnoremap <C-J> <C-w>j
-nnoremap <C-S-k> <C-w>k
-nnoremap <C-H> <C-w>h
-nnoremap <C-L> <C-w>l
-
-"let g:tmux_navigator_no_mappings = 1
-
-"nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-"nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-"nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-"nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-"nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
+"" quicker window movement
+"nnoremap <C-J> <C-w>j
+"nnoremap <C-S-k> <C-w>k
+"nnoremap <C-H> <C-w>h
+"nnoremap <C-L> <C-w>l
 
 nmap <leader>sv :vsplit<cr>
 nmap <leader>sh :split<cr>
@@ -65,11 +59,8 @@ nnoremap j gj
 nnoremap k gk
 
 "-- lines
-" insert blank line
-nnoremap <Leader>I a<CR><Esc>k$
 " duplicate line
-"map <Leader>d "ayy"ap
-nmap <Leader>d mzyyp`z
+map <Leader>d "ayy"ap
 
 "-- paragraphs
 noremap cp yap<S-}>p
