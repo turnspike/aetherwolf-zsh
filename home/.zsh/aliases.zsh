@@ -5,6 +5,10 @@ alias l="ls -ah --color --group-directories-first"
 alias ll="ls -ahl --color --group-directories-first"
 alias ..="cd .."
 
+#-- system
+alias md="mkdir"
+alias rd="rmdir"
+
 #-- reload various things, eg to apply config changes w
 alias reload-zsh="zplug clean;source ~/.zshrc"
 
@@ -36,9 +40,9 @@ alias eg="emacsclient -c -n -a ''" # gui emacs
 alias emacsbare="emacs -nw -Q --eval \"(load-theme 'misterioso)\""
 alias g="git"
 alias hs="homeshick"
-alias n="nvim"
 alias nv="nvim"
-alias v="vim"
+alias vim="nvim"
+alias vimold="/usr/bin/vim"
 
 #-- misc
 alias shellname="ps -p $$"
