@@ -7,6 +7,8 @@ export HISTCONTROL="ignoreboth"
 export HISTIGNORE="&:ls:[bf]g:exit:l:ll:.."
 #shopt -s cmdhist # fix for multiline commands
 
+KEYTIMEOUT=1 # 10ms for key sequences
+
 ## locale settings for perl, ruby
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8

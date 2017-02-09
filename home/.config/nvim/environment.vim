@@ -24,7 +24,7 @@ set splitright " open vsplits right (defaults left)
 
 "-- input
 set timeout " use timeouts for keyboard combo mappings
-set timeoutlen=200 ttimeoutlen=10
+set timeoutlen=600 ttimeoutlen=0 " 600ms for key combos, 0ms for <esc>
 
 "-- commandline
 set wildmode=list:longest,full " more linuxy filename completion with <tab>
