@@ -30,6 +30,7 @@
 # Default: depends on the distro (which is either auto-detected, either set
 # via $DISTRO)
 LOGO=" "
+LOGO="(◠‿◠) "
 LOGO=" (◕ᴥ◕) "
 
 # Abbreviate the release to N characters

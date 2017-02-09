@@ -1,7 +1,8 @@
 "-- note: plugin specific keybinds live in plugins.vim
 
 " use space as leader key
-let mapleader = "\<Space>"
+map <space> <leader>
+map <space><space> <leader><leader>
 " let maplocalleader = ","
 
 " extra ways to exit insert mode
@@ -16,19 +17,21 @@ imap <S-CR> <Esc>
 "nnoremap <C-H> <C-w>h
 "nnoremap <C-L> <C-w>l
 
+" also use leader w for window command prefix
+nnoremap <leader>w <c-w>
 nmap <leader>sv :vsplit<cr>
 nmap <leader>sh :split<cr>
 nmap <leader>= :resize +5<cr>
 nmap <leader>- :resize -5<cr>
-nmap <leader>] :vertical resize -5<cr>
-nmap <leader>[ :vertical resize +5<cr>
+nmap <leader>[ :vertical resize -5<cr>
+nmap <leader>] :vertical resize +5<cr>
 
 "-- copy/paste
 
 " copy to system clipboard
-vnoremap <leader>y  "+y
-nnoremap <leader>Y  "+yg_
-nnoremap <leader>y  "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+yg_
+nnoremap <leader>y "+y
 nnoremap <leader>yy "+yy
 
 " paste from system clipboard
@@ -38,7 +41,7 @@ vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
 " don't copy the contents of an overwritten selection
-vnoremap p "_dP
+"vnoremap p "_dP
 
 " toggle autocommenting etc when pasting from websites
 set pastetoggle=<leader>z
@@ -48,7 +51,7 @@ set pastetoggle=<leader>z
 nnoremap Q q
 " normal q does nothing
 nnoremap q <nop>
-" don't use q: command (TODO: find a better mapping)
+" don't use q: command (TODO: find a remap for q:)
 map q: <nop>
 
 " press leader twice for visual mode
@@ -60,7 +63,8 @@ nnoremap k gk
 
 "-- lines
 " duplicate line
-map <Leader>d "ayy"ap
+map [d "ayy"ap
+map ]d "ayy"aP
 
 "-- paragraphs
 noremap cp yap<S-}>p

@@ -5,13 +5,11 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-"-- baseline plugins
-Plug 'tpope/vim-sensible'
-
 "-- editing
 
-"Plug 'tpope/vim-unimpaired' " manipulate lines using [ and ]
-Plug 'vim-scripts/LineJuggler' " manipulate lines using [ and ]
+Plug 'tpope/vim-unimpaired' " manipulate lines using [ and ]
+" TODO: add plugin for line duplication
+"Plug 'vim-scripts/LineJuggler' " manipulate lines using [ and ] ; this is broken...
 
 " visually select outwards using <v>
 Plug 'terryma/vim-expand-region'
