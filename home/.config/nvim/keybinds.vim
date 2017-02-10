@@ -2,12 +2,16 @@
 
 " use space as leader key
 map <space> <leader>
-"map <space><space> <leader><leader>
+map <space><space> <leader><leader>
 "let maplocalleader = ","
+
+"#-- movement
 
 " extra ways to exit insert mode
 imap jk <esc>
 "imap <s-cr> <esc>
+map <c-j> <c-d>
+map <c-k> <c-u>
 
 "#-- buffers
 map <leader>bd :bdelete<cr>
@@ -17,18 +21,13 @@ map <leader>bc :enew<cr>
 
 "#-- splits
 
-"" quicker window movement
-"nnoremap <C-J> <C-w>j
-"nnoremap <C-S-k> <C-w>k
-"nnoremap <C-H> <C-w>h
-"nnoremap <C-L> <C-w>l
-" also use leader w for window command prefix
-"nnoremap <leader>w <c-w>
-nnoremap <leader>h <c-w>h
-nnoremap <leader>j <c-w>j
-nnoremap <leader>k <c-w>k
-nnoremap <leader>l <c-w>l
+" quicker window movement
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
+" manipulate splits
 nmap <leader>sv :vsplit<cr>
 nmap <leader>sh :split<cr>
 nmap <leader>sd :q<cr>
@@ -52,7 +51,7 @@ nnoremap <leader>P "+P
 "vnoremap p "_dP
 
 " toggle autocommenting etc when pasting from websites
-set pastetoggle=<leader>x
+set pastetoggle=<leader>zx
 
 "#-- cursor
 " move cursor naturally through wrapped lines
@@ -61,21 +60,26 @@ nnoremap k gk
 
 "#-- lines
 
-" double-tap current line in visual mode
+" double-tap leader to select current line in visual mode
 nmap <leader><leader> V
 
-" duplicate line
-"map <leader>[ "ayy"ap
+" duplicate/clone line
 noremap <leader>d "ayy"ap
-" join line
 
-"map <leader>D "ayy"aP
+" join line
+"...
 
 "#-- paragraphs
 " clone
 noremap <leader>pc vipy'>pO<esc>j
 " delete
 noremap <leader>pd vipd
+
+"#-- selections
+" clone
+noremap <leader>vc y'>pO<esc>j
+" delete
+noremap <leader>vd gvd
 
 "-- files
 "nnoremap <leader>s :w<cr>

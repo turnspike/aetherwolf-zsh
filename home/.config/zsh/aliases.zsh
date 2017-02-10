@@ -1,8 +1,17 @@
 #!/bin/zsh
 
 #-- directories
-alias l="ls -ah --color --group-directories-first"
-alias ll="ls -ahl --color --group-directories-first"
+if [[ `uname` == 'Darwin' ]]
+then
+	export CLICOLOR=1
+	export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+	alias l="ls -afh"
+	alias ll="ls -afhg"
+else
+	alias l="ls -ah --color --group-directories-first"
+	alias ll="ls -ahl --color --group-directories-first"
+fi
+
 alias ..="cd .."
 
 #-- system
