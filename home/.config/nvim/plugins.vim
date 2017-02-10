@@ -5,17 +5,18 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-"-- editing
+"#-- editing
 
-Plug 'tpope/vim-unimpaired' " manipulate lines using [ and ]
-" TODO: add plugin for line duplication
-"Plug 'vim-scripts/LineJuggler' " manipulate lines using [ and ] ; this is broken...
+Plug 'matze/vim-move' " move chunks using <A-k> and <A-j>
+Plug 'timkendrick/vim-duplicate' " duplicate chunks using <leader>-d
+map <leader>d <Plug>Duplicate
 
 " visually select outwards using <v>
 Plug 'terryma/vim-expand-region'
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
+" region commenting
 Plug 'scrooloose/nerdcommenter'
 let g:NERDDefaultAlign = 'left' " comment delimiters hard left
 "let g:NERDSpaceDelims = 1 " add spaces after comment delimiters by default
@@ -23,6 +24,7 @@ let g:NERDDefaultAlign = 'left' " comment delimiters hard left
 let g:NERDCommentEmptyLines = 1 " allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDTrimTrailingWhitespace = 1 " enable trimming of trailing whitespace when uncommenting
 
+" whitespace
 "Plug 'thirtythreeforty/lessspace.vim' "strip whitespace only on edited lines
 Plug 'ntpeters/vim-better-whitespace' " hilight and work with trailing whitespace
 autocmd BufEnter * EnableStripWhitespaceOnSave " auto strip whitespace
@@ -92,7 +94,7 @@ let g:airline_section_y = '' " default is (fileencoding, fileformat)
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme = 'powerlineish'
 
-Plug 'airblade/vim-gitgutter'
+" show mark info in gutter
 Plug 'kshenoy/vim-signature'
 
 " start screen menu

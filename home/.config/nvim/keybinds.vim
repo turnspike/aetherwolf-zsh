@@ -72,9 +72,10 @@ noremap <leader>d "ayy"ap
 "map <leader>D "ayy"aP
 
 "#-- paragraphs
-" clone paragraph
-noremap <leader>[ vipy'>p
-"cp yap<S-}>p
+" clone
+noremap <leader>pc vipy'>pO<esc>j
+" delete
+noremap <leader>pd vipd
 
 "-- files
 "nnoremap <leader>s :w<cr>
