@@ -1,12 +1,15 @@
 # Turnspike Dotfiles
 
-Nix configuration managed by homeshick.
+The official turnspike nix settings. Sane defaults and tweaks for:
 
   * zsh
-  * vim
   * spacemacs
   * byobu
-  
+
 # Installation
 
-./install.sh
+Requires homeshick or homesick.
+
+Just run:
+  * homeshick clone turnspike/dotfiles  
+  
