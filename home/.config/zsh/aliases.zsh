@@ -17,6 +17,8 @@ alias ..="cd .."
 #-- system
 alias md="mkdir"
 alias rd="rmdir"
+alias tr="trash-put" # delete files with github.com/andreafrancia/trash-cli
+alias rm='echo "use tr instead, or \\rm to bypass"; false'
 
 #-- reload various things, eg to apply config changes w
 alias reload-zsh="zplug clean;source ~/.zshrc"
