@@ -9,6 +9,9 @@ export HISTIGNORE="&:ls:[bf]g:exit:l:ll:.."
 
 KEYTIMEOUT=1 # 10ms for key sequences
 
+setopt inc_append_history # Appends every command to the history file once it is executed
+setopt share_history # Reloads the history whenever you use it
+
 ## locale settings for perl, ruby
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
