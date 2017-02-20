@@ -15,8 +15,8 @@ export ZPLUG_HOME=$HOME/.zplug
 
 #-- install zplug if needed
 if [[ ! -d $ZPLUG_HOME ]]; then
-  git clone https://github.com/zplug/zplug $ZPLUG_HOME
-  source $ZPLUG_HOME/init.zsh && zplug update --self
+	git clone https://github.com/zplug/zplug $ZPLUG_HOME
+	source $ZPLUG_HOME/init.zsh && zplug update --self
 fi
 
 #-- init zplug
@@ -25,6 +25,10 @@ source $ZPLUG_HOME/init.zsh
 #-- plugin list
 #zplug "zsh-users/zsh-syntax-highlighting"
 #zplug "plugins/vi-mode", from:oh-my-zsh
+zplug "junegunn/fzf-bin"
+export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 zplug "jocelynmallon/zshmarks" # nice folder bookmarking
 #zplug "themes/pygmalion", from:oh-my-zs
 zplug "plugins/ssh-agent", from:oh-my-zsh, ignore:oh-my-zsh.sh
@@ -45,12 +49,12 @@ GEOMETRY_PROMPT_PLUGINS=(exec_time git)
 
 #-- install packages as needed
 if ! zplug check --verbose; then
-    printf "Install packages? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    else
-        echo
-    fi
+	printf "Install packages? [y/N]: "
+	if read -q; then
+		echo; zplug install
+	else
+		echo
+	fi
 fi
 
 #-- load plugins
@@ -59,10 +63,9 @@ zplug load
 
 # # https://coderwall.com/p/yw96rg/display-all-commands-offered-by-your-installed-oh-my-zsh-plugins
 # function plug_opts() {
-	# PLUGIN_PATH="$HOME/.oh-my-zsh/plugins/"
-	# for plugin in $plugins; do
-		# echo "\n\nPlugin: $plugin"; grep -r "^function \w*" $PLUGIN_PATH$plugin | awk '{print $2}' | sed 's/()//'| tr '\n' ', '; grep -r "^alias" $PLUGIN_PATH$plugin | awk '{print $2}' | sed 's/=.*//' |  tr '\n' ', '
-	# done
-# }
-
+# PLUGIN_PATH="$HOME/.oh-my-zsh/plugins/"
+# for plugin in $plugins; do
+# echo "\n\nPlugin: $plugin"; grep -r "^function \w*" $PLUGIN_PATH$plugin | awk '{print $2}' | sed 's/()//'| tr '\n' ', '; grep -r "^alias" $PLUGIN_PATH$plugin | awk '{print $2}' | sed 's/=.*//' |  tr '\n' ', '
+# done
+#
 pp_msg "zplug started."

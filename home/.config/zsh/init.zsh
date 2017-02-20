@@ -14,6 +14,9 @@ source $ZCONF/keybinds.zsh # load keybindings
 source $ZCONF/aliases.zsh # load aliases
 source $ZCONF/functions.zsh # load shell helper functions
 
+## reload completions
+#compinit -D
+
 #-- show startup duration
 function { # function to localise vars
     local ZSTOP=$(date +%s%N | cut -b1-13)
