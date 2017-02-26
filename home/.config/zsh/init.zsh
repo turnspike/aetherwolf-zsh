@@ -19,9 +19,15 @@ source $ZCONF/functions.zsh # load shell helper functions
 
 #-- show startup duration
 function { # function to localise vars
-    local ZSTOP=$(date +%s%N | cut -b1-13)
-    local ZDIFF=$(($ZSTOP-$ZSTART))
-    pp_msg "☯ startup took ${ZDIFF}ms."
+
+	if [[ "$(uname)" = "Darwin" ]]; then
+		# not yet implemented as macos uses a different date format
+	else
+		local ZSTOP=$(date +%s%N | cut -b1-13)
+		local ZDIFF=$(($ZSTOP-$ZSTART))
+		pp_msg "☯ startup took ${ZDIFF}ms."
+	fi
+
 }
 
 unset ZSTART # remove startup timer

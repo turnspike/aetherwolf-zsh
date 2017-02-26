@@ -1,8 +1,7 @@
 #!/bin/zsh
 
 #-- directories
-if [[ `uname` == 'Darwin' ]]
-then
+if [[ "$(uname)" = "Darwin" ]]; then # macos uses a different 'ls'
 	export CLICOLOR=1
 	export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 	alias l="ls -afh"
