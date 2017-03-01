@@ -36,26 +36,37 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     elfeed
      helm
      ;; auto-completion
-     ;; better-defaults
+     better-defaults
+     clojure
      emacs-lisp
+     erc
      evil-commentary
-     ;; git
-     ;; markdown
+     git
+     ;;gnus
+     markdown
+     mu4e
      org
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
+     plantuml
+     ;; (shell :variables
+     ;;        shell-default-height 30
+     ;;        shell-default-position 'bottom)
      spell-checking
-     syntax-checking
+     ;; syntax-checking
+     twitter
      version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      disable-mouse
+                                      eww
+                                      pinentry
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -84,7 +95,7 @@ values."
    ;; This variable has no effect if Emacs is launched with the parameter
    ;; `--insecure' which forces the value of this variable to nil.
    ;; (default t)
-   dotspacemacs-elpa-https t
+   dotspacemacs-elpa-https nil
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    dotspacemacs-elpa-timeout 5
    ;; If non nil then spacemacs will check for updates at startup
@@ -127,7 +138,17 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(
+                         busybee
+                         ;; smyx
+                         ;; flatland
+                         ;; markdown-mode
+                         ;; org-mode
+                         ;; monokai
+                         ;; sanityinc-tomorrow-eighties
+                         ;; niflheim
+                         ;; badwolf
+                         ;; spacemacs-dark
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -162,7 +183,7 @@ values."
    ;; works in the GUI. (default nil)
    dotspacemacs-distinguish-gui-tab nil
    ;; If non nil `Y' is remapped to `y$' in Evil states. (default nil)
-   dotspacemacs-remap-Y-to-y$ nil
+   dotspacemacs-remap-Y-to-y$ t 
    ;; If non-nil, the shift mappings `<' and `>' retain visual state if used
    ;; there. (default t)
    dotspacemacs-retain-visual-state-on-shift t
@@ -274,7 +295,7 @@ values."
    dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
    ;; The default package repository used if no explicit repository has been
    ;; specified with an installed package.
-   ;; N
+   ;; Not used for now. (default nil)
    dotspacemacs-default-package-repository nil
    ;; Delete whitespace while saving buffer. Possible values are `all'
    ;; to aggressively delete empty line and long sequences of whitespace,
@@ -282,37 +303,6 @@ values."
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
-
-   ;;---- user config
-
-   dotspacemacs-default-font '("Anonymice Powerline"
-                               :size 20
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
-
-   ;; (global-set-key (kbd "M-h") 'backward-kill-word)
-   ;; (global-set-key [A-delete] 'backward-kill-word)
-
-   ;; (define-key global-map (kbd "C-+") 'text-scale-increase)
-   ;; (define-key global-map (kbd "C--") 'text-scale-decrease)
-
-   dotspacemacs-themes '(
-                         busybee
-                         heroku
-                         ;;spacemacs-dark
-                         material
-                         sanityinc-tomorrow-eighties
-                         material-light
-                         ;; smyx
-                         ;; flatland
-                         ;; markdown-mode
-                         ;; org-mode
-                         ;; monokai
-                         ;; niflheim
-                         ;; badwolf
-                         spacemacs-light)
-
    ))
 
 (defun dotspacemacs/user-init ()
@@ -333,50 +323,132 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
 
+  ;; TODO auto-mount /Private if not present
 
+  ;;-- elfeed news reader
+
+  ;;  (setq rmh-elfeed-org-files (list "~/org/feeds.org"))
+  ;; (elfeed :variables rmh-elfeed-org-files (list "~/org/feeds.org"
+  ;;                                               "~/.emacs.d/private/elfeed2.org"))
+
+  ;; (elfeed :variables
+  ;;         elfeed-feeds '(("http://nullprogram.com/feed/" blog emacs)
+  ;;                        "http://www.50ply.com/atom.xml"  ; no autotagging
+  ;;                        ("http://nedroid.com/feed/" webcomic)))
+
+  ;;(elfeed :variables rmh-elfeed-org-files (list "~/org/feeds.org"))
+ 
+  ;;-- org mode
+  ;;  (add-to-list 'load-path (expand-file-name "~/org"))
+  (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
+
+  (setq org-agenda-files (quote ("~/org"
+ "~/org/turnspike-blog"
+                                 "~/Private/org"
+                                 ;;"~/git/org/client1"
+                                 ;;"~/git/client2"
+                                 )))
+
+  ;; http://doc.norang.ca/org-mode.html
+
+  ;;-- mu4e mail client
+  ;;; Set up some common mu4e variables
+  (setq mu4e-maildir "~/email"
+        mu4e-trash-folder "/Trash"
+        mu4e-refile-folder "/Archive"
+        mu4e-sent-folder "/Sent"
+        mu4e-drafts-folder "/Drafts"
+        mu4e-get-mail-command "mbsync fastmail"
+        mu4e-update-interval nil
+        mu4e-compose-signature-auto-include nil
+        mu4e-view-show-images t
+        mu4e-view-show-addresses t)
+
+;;   (setq mu4e-sent-folder "~/email/sent"
+;;         mu4e-drafts-folder "~/email/drafts"
+;;         user-mail-address "nikatwork@gmail.com"
+;;         smtpmail-default-smtp-server "smtp.fastmail.com"
+;; ;;        smtpmail-local-domain "account1.example.com"
+;;         smtpmail-smtp-server "smtp.fastmail.com"
+;;         smtpmail-stream-type "ssl"
+;;         smtpmail-smtp-service 465)
+
+  ;; (setq mu4e-account-alist
+  ;;       '(("fastmail"
+  ;;          ;; Under each account, set the account-specific variables you want.
+  ;;          (mu4e-sent-messages-behavior delete)
+  ;;          (mu4e-sent-folder "~/email/sent")
+  ;;          (mu4e-drafts-folder "~/email/drafts")
+  ;;          ;; (user-mail-address "billy@gmail.com")
+  ;;          ;; (user-full-name "Billy")
+  ;;          )
+
+  ;;         ))
+  (mu4e/mail-account-reset)
+
+  ;; ;;; Mail directory shortcuts
+  ;; (setq mu4e-maildir-shortcuts
+  ;;       '(("/gmail/INBOX" . ?g)
+  ;;         ("/college/INBOX" . ?c)))
+
+  ;; ;;; Bookmarks
+  ;; (setq mu4e-bookmarks
+  ;;       `(("flag:unread AND NOT flag:trashed" "Unread messages" ?u)
+  ;;         ("date:today..now" "Today's messages" ?t)
+  ;;         ("date:7d..now" "Last 7 days" ?w)
+  ;;         ("mime:image/*" "Messages with images" ?p)
+  ;;         (,(mapconcat 'identity
+  ;;                      (mapcar
+  ;;                       (lambda (maildir)
+  ;;                         (concat "maildir:" (car maildir)))
+  ;;                       mu4e-maildir-shortcuts) " OR ")
+  ;;                   "All inboxes" ?i)))
+
+  ;; (with-eval-after-load 'helm-command
+  ;;   (global-set-key (kbd "M-x") 'helm-M-x))
+
+  (setq epg-gpg-program "/usr/bin/gpg2")
+
+  ;;-- TODO this is only disabled while we're learning spacemacs
+  (setq dotspacemacs-mode-line-unicode-symbols nil) ;; don't use fancy mode icons
+  (spacemacs/toggle-mode-line-minor-modes-off) ;; don't show minor mode info
+
+  ;;-- FIXME setup mouse mode - copy/paste etc. disable for now. TODO only in terminal.
+  (global-disable-mouse-mode)
+  (xterm-mouse-mode -1)
+;;  (gpm-mouse-mode nil)
+
+  ;;-- package config
+  (setq-default evil-escape-key-sequence "jk") ;; use jk to exit Insert mode (type j then k slowly to type the actual string "jk") 
+  (setq powerline-default-separator 'arrow) ;; don't use fancy powerline symbols that would need a patched font
+  (setq browse-url-browser-function 'eww-browse-url) ;; use eww package as web browser
+
+  ;; -- shell
+  ;;(shell-default-term-shell "/bin/zsh")
+
+  ;; Elfeed
+  (setq elfeed-feeds '(
+                       "https://www.reddit.com/r/emacs/.rss"
+                       "http://xkcd.com/rss.xml"
+                       ))
+
+  ;; ;; IRC
+  ;; erc-server-list
+  ;; `(
+  ;;   ("irc.gitter.im" :port "6667" :nick "TheBB" :full-name ,bb/full-name :ssl t :password ,bb/gitter-pwd)
+  ;;   ("irc.freenode.net" :port "6667" :nick "TheBB" :full-name ,bb/full-name)
+  ;;   )
+  ;; erc-autojoin-channels-alist
+  ;; '(
+  ;;   ("1\\.0\\.0" "#syl20bnr/spacemacs" "#syl20bnr/spacemacs-devel") ; Gitter
+  ;;   ("irc.gitter.im" "#syl20bnr/spacemacs" "#syl20bnr/spacemacs-devel")
+  ;;   ("freenode\\.net" "#emacs" "#emacs-beginners" "#spacemacs" "#evil-mode"))
+
+  ;;-- environment config
+  (setq gc-cons-threshold 50000000)
+  (setq gnutls-min-prime-bits 4096)
+  ;;  custom-file (concat dotspacemacs-directory "custom.el")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default bold shadow italic underline bold bold-italic bold])
- '(ansi-color-names-vector
-   (vector "#212121" "#B71C1C" "#558b2f" "#FFA000" "#2196f3" "#4527A0" "#00796b" "#FAFAFA"))
- '(evil-want-Y-yank-to-eol nil)
- '(hl-sexp-background-color "#efebe9")
- '(package-selected-packages
-   (quote
-    (xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help evil-commentary color-theme-sanityinc-tomorrow material-theme heroku-theme org-projectile org-present org org-pomodoro alert log4e gntp org-download htmlize gnuplot git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-commit with-editor git-gutter flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck diff-hl auto-dictionary ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme)))
- '(vc-annotate-background nil)
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#B71C1C")
-     (40 . "#FF5722")
-     (60 . "#FFA000")
-     (80 . "#558b2f")
-     (100 . "#00796b")
-     (120 . "#2196f3")
-     (140 . "#4527A0")
-     (160 . "#B71C1C")
-     (180 . "#FF5722")
-     (200 . "#FFA000")
-     (220 . "#558b2f")
-     (240 . "#00796b")
-     (260 . "#2196f3")
-     (280 . "#4527A0")
-     (300 . "#B71C1C")
-     (320 . "#FF5722")
-     (340 . "#FFA000")
-     (360 . "#558b2f"))))
- '(vc-annotate-very-old-color nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
