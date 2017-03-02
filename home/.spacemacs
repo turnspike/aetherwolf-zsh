@@ -1,4 +1,4 @@
-;; -*- mode: emacs-lisp -*-
+
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
@@ -31,24 +31,26 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     ruby
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     ;; auto-completion
+     auto-completion
      ;; better-defaults
      emacs-lisp
      evil-commentary
-     ;; git
-     ;; markdown
+     git
+     markdown
      org
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
      spell-checking
      syntax-checking
+     tabbar
      version-control
      )
    ;; List of additional packages that will be installed without being
@@ -283,35 +285,6 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
 
-   ;;---- user config
-
-   dotspacemacs-default-font '("Anonymice Powerline"
-                               :size 20
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
-
-   ;; (global-set-key (kbd "M-h") 'backward-kill-word)
-   ;; (global-set-key [A-delete] 'backward-kill-word)
-
-   ;; (define-key global-map (kbd "C-+") 'text-scale-increase)
-   ;; (define-key global-map (kbd "C--") 'text-scale-decrease)
-
-   dotspacemacs-themes '(
-                         busybee
-                         heroku
-                         ;;spacemacs-dark
-                         material
-                         sanityinc-tomorrow-eighties
-                         material-light
-                         ;; smyx
-                         ;; flatland
-                         ;; markdown-mode
-                         ;; org-mode
-                         ;; monokai
-                         ;; niflheim
-                         ;; badwolf
-                         spacemacs-light)
 
    ))
 
@@ -322,6 +295,13 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq-default
+   ;; Use jk to escape to normal mode
+   evil-escape-key-sequence (kbd "jk")
+
+   ;; don't use default persistent search highlight
+   evil-search-highlight-persist nil
+   )
   )
 
 (defun dotspacemacs/user-config ()
@@ -332,8 +312,40 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; Scale fonts
+  (global-set-key (kbd "C-=") 'text-scale-increase)
+  (global-set-key (kbd "C--") 'text-scale-decrease)
+
+  ;; Switching windows
+  (global-set-key [S-left] 'windmove-left)
+  (global-set-key [S-right] 'windmove-right)
+  (global-set-key [S-up] 'windmove-up)
+  (global-set-key [S-down] 'windmove-down)
+
+  (global-set-key [A-delete] 'backward-kill-word)
+
+  (global-evil-search-highlight-persist -1)
+
+  (setq-default
+   dotspacemacs-default-theme 'material-light
+   evil-escape-key-sequence "jk" ;; use jk to exit Insert mode (type j then k slowly to type the actual string "jk")
 
 
+   dotspacemacs-default-font '("Anonymice Powerline"
+                               :size 18
+                               :weight normal
+                               :width normal
+                               :powerline-scale 1.1)
+
+   dotspacemacs-themes '(
+                         material-light
+                         spacemacs-light
+                         busybee
+                         heroku
+                         material
+                         sanityinc-tomorrow-eighties
+                         )
+   )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -351,7 +363,8 @@ you should place your code here."
  '(hl-sexp-background-color "#efebe9")
  '(package-selected-packages
    (quote
-    (xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help evil-commentary color-theme-sanityinc-tomorrow material-theme heroku-theme org-projectile org-present org org-pomodoro alert log4e gntp org-download htmlize gnuplot git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-commit with-editor git-gutter flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck diff-hl auto-dictionary ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme)))
+    (smeargle orgit mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit magit-popup company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby tabbar xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help evil-commentary color-theme-sanityinc-tomorrow material-theme heroku-theme org-projectile org-present org org-pomodoro alert log4e gntp org-download htmlize gnuplot git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-commit with-editor git-gutter flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck diff-hl auto-dictionary ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme)))
+ '(tabbar-separator (quote (0.5)))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
