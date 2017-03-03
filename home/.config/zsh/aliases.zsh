@@ -105,7 +105,7 @@ alias g="git"
 alias hs="homeshick"
 alias nv="nvim"
 #alias vim="nvim"
-#alias vimold="/usr/bin/vim"
+alias vimold="/usr/bin/vim"
 
 #-- misc
 alias shellname="ps -p $$"
