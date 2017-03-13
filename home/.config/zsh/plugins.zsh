@@ -42,6 +42,12 @@ zplug "plugins/ssh-agent", from:oh-my-zsh, ignore:oh-my-zsh.sh
 #zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
+#-- dev autocompletion
+#zplug "plugins/bundler", from:oh-my-zsh
+#zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/heroku", from:oh-my-zsh, ignore:oh-my-zsh.sh
+#zplug "plugins/rbenv", from:oh-my-zsh
+
 #-- theme
 zplug "frmendes/geometry" # nice theme
 #GEOMETRY_SYMBOL_PROMPT="∴"

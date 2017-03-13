@@ -96,6 +96,7 @@ alias ct="ctags -R -f ./.git/tags ."
 alias rsl="rails server -b 0.0.0.0"
 
 #-- apps
+alias ag='ag --hidden'
 alias e="emacsclient -t -a ''"
 #alias e="emacsclient -a '' -c"
 alias eb="emacsbare"
