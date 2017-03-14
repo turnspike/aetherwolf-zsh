@@ -8,7 +8,6 @@ ZCACHE=$XDG_CACHE_HOME/zsh
 export BLOCKSIZE=1k # set default blocksize for ls, df, du
 
 #---- history
-
 HISTFILE="$ZCACHE/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
@@ -34,3 +33,6 @@ KEYTIMEOUT=1 # 10ms for key sequences
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+#---- apps
+export ENHANCD_FILTER=fzy;

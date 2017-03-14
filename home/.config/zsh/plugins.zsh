@@ -32,6 +32,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 zplug "jocelynmallon/zshmarks" # nice folder bookmarking
 #zplug "themes/pygmalion", from:oh-my-zs
 zplug "plugins/ssh-agent", from:oh-my-zsh, ignore:oh-my-zsh.sh
+zplug "b4b4r07/enhancd", use:init.sh # better cd
 # zplug "plugins/git", from:oh-my-zsh
 # zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 #zplug "themes/af-magic", from:oh-my-zsh
