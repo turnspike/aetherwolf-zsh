@@ -1,6 +1,6 @@
 # Turnspike Dotfiles
 
-The official [turnspike](https://turnspike.com) nix settings. Sane defaults and tweaks for:
+turnspike's nix settings. Sane defaults and tweaks for:
 
   * zsh
   * spacemacs
@@ -12,5 +12,4 @@ Requires [homeshick](https://github.com/andsens/homeshick) or homesick.
 
 Just run:
 
-    homeshick clone turnspike/dotfiles  
-  
+    homeshick clone turnspike/dotfiles
