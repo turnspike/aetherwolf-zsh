@@ -11,7 +11,7 @@ else
 	alias ll="ls -ahl --color --group-directories-first"
 fi
 
-alias ..="cd .."
+alias ..="cd ./.."
 alias cdu="cd-gitroot"
 
 #-- system
