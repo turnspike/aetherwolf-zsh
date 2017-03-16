@@ -12,6 +12,7 @@ else
 fi
 
 alias ..="cd .."
+alias cdu="cd-gitroot"
 
 #-- system
 alias md="mkdir"
@@ -106,7 +107,7 @@ alias g="git"
 alias hs="homeshick"
 alias nv="nvim"
 #alias vim="nvim"
-alias vimold="/usr/bin/vim"
+#alias vimold="/usr/bin/vim"
 
 #-- misc
 alias shellname="ps -p $$"

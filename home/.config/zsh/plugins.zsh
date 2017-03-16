@@ -11,7 +11,7 @@ homeshick --quiet refresh # update configs from git
 #-- use zplug plugin manager:
 #   https://github.com/zplug/zplug
 
-export ZPLUG_HOME=$HOME/.zplug
+export ZPLUG_HOME=$HOME/.zplug # TODO xdg this
 
 #-- install zplug if needed
 if [[ ! -d $ZPLUG_HOME ]]; then
@@ -33,6 +33,7 @@ zplug "jocelynmallon/zshmarks" # nice folder bookmarking
 #zplug "themes/pygmalion", from:oh-my-zs
 zplug "plugins/ssh-agent", from:oh-my-zsh, ignore:oh-my-zsh.sh
 zplug "b4b4r07/enhancd", use:init.sh # better cd
+zplug "mollifier/cd-gitroot" # cd-gitroot to move up to git toplevel folder
 # zplug "plugins/git", from:oh-my-zsh
 # zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 #zplug "themes/af-magic", from:oh-my-zsh
