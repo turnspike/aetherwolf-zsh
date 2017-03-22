@@ -34,8 +34,10 @@ zplug "jocelynmallon/zshmarks" # nice folder bookmarking
 zplug "plugins/ssh-agent", from:oh-my-zsh, ignore:oh-my-zsh.sh
 
 zplug "b4b4r07/enhancd", use:init.sh # better cd
-export ENHANCD_FILTER=fzy;
-export ENHANCD_DISABLE_DOT=1;
+export ENHANCD_FILTER=fzy
+export ENHANCD_DISABLE_DOT=1
+export ENHANCD_DISABLE_HOME=1
+alias cdh="cd -"
 
 zplug "mollifier/cd-gitroot" # cd-gitroot to move up to git toplevel folder
 # zplug "plugins/git", from:oh-my-zsh
