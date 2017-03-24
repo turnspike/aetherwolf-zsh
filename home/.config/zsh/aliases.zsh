@@ -106,8 +106,8 @@ alias emacsbare="emacs -nw -Q --eval \"(load-theme 'misterioso)\""
 alias g="git"
 alias hs="homeshick"
 alias nv="nvim"
-#alias vim="nvim"
-#alias vimold="/usr/bin/vim"
+alias vim="nvim"
+alias vimold="/usr/bin/vim"
 
 #-- misc
 alias shellname="ps -p $$"
