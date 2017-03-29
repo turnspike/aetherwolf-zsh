@@ -1,0 +1,69 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/1h/zf6dbr3x6zdd_yzl1r98ygxm0000gp/T/d-117211-64962-18cje6b/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/1h/zf6dbr3x6zdd_yzl1r98ygxm0000gp/T/d-117211-64962-18cje6b/package.tgz",
+        "spec": "/private/var/folders/1h/zf6dbr3x6zdd_yzl1r98ygxm0000gp/T/d-117211-64962-18cje6b/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/1h/zf6dbr3x6zdd_yzl1r98ygxm0000gp/T/apm-install-dir-117211-64962-6zoqli"
+    ]
+  ],
+  "_from": "../d-117211-64962-18cje6b/package.tgz",
+  "_id": "atom-css-comb@3.1.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/atom-css-comb",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/1h/zf6dbr3x6zdd_yzl1r98ygxm0000gp/T/d-117211-64962-18cje6b/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/1h/zf6dbr3x6zdd_yzl1r98ygxm0000gp/T/d-117211-64962-18cje6b/package.tgz",
+    "spec": "/private/var/folders/1h/zf6dbr3x6zdd_yzl1r98ygxm0000gp/T/d-117211-64962-18cje6b/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-117211-64962-18cje6b/package.tgz",
+  "_shasum": "bf7fb59359b29bb4ed603a69c83722c469bb6bfd",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/1h/zf6dbr3x6zdd_yzl1r98ygxm0000gp/T/d-117211-64962-18cje6b/package.tgz",
+  "_where": "/private/var/folders/1h/zf6dbr3x6zdd_yzl1r98ygxm0000gp/T/apm-install-dir-117211-64962-6zoqli",
+  "activationCommands": {
+    "atom-text-editor": [
+      "css-comb:comb",
+      "css-comb:userSettings"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/jchouse/csscomb-atom/issues"
+  },
+  "dependencies": {
+    "atom-space-pen-views": "2.0.3",
+    "csscomb": "3.1.8"
+  },
+  "description": "CSScomb is a coding style formatter for CSS (LESS|SASS|SCSS). You can easily write your own configuration to make your style sheets beautiful and consistent.",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=0.196.0"
+  },
+  "homepage": "https://github.com/jchouse/csscomb-atom",
+  "license": "MIT",
+  "main": "./lib/css-comb",
+  "name": "atom-css-comb",
+  "optionalDependencies": {},
+  "readme": "# Csscomb package\nCSScomb is a coding style formatter for CSS (LESS|SASS|SCSS).\n\nBased on [csscombjs 3.0](https://github.com/csscomb/csscomb.js)\n\n![Css Comb](https://raw.githubusercontent.com/jchouse/csscomb-atom/master/i/csscomb.gif)\n\n## Configure\nCreate you [own config](http://csscomb.com/config).\nRead about prep [configs](https://github.com/csscomb/csscomb.js/tree/master/config)\n\n## How to use\nOpen any file and press `ctrl+alt+c`, or use context menu.\n\n## Contributors\nHaojia Che [1989car](https://github.com/1989car)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jchouse/csscomb-atom.git"
+  },
+  "version": "3.1.0"
+}

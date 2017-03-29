@@ -1,0 +1,20 @@
+# List of authors who have contributed to termination
+
+Fred Barclay (BugsAteFred@gmail.com)
+ * Termination maintainer
+
+Ben Pritchard (https://github.com/benpritchard)
+ * Added Copy All to New File functionality
+
+Peter Benjamin (https://github.com/pmbenjamin)
+ * Added One Dark theme
+
+David Klanac (https://github.com/dklanac)
+ * Underline the active terminal icon
+
+Ben Phelps (https://github.com/benphelps)
+ * Fixed deprecation warning
+ * Fixed pane.addItem deprecation
+
+Yiannin Kostantinidis (https://github.com/Naki21)
+ * Found fix for termination failing to run `atom`, `electron`, and `node` commands properly
