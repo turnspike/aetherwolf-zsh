@@ -53,16 +53,16 @@ zplug "mollifier/cd-gitroot" # cd-gitroot to move up to git toplevel folder
 zplug "plugins/colorize", from:oh-my-zsh, ignore:oh-my-zsh.sh
 #zplug "plugins/zsh_reload", from:oh-my-zsh
 zplug "chrissicool/zsh-256color" # ZSH plugin enhancesheerminal environment with 256 colors.
-zplug "zsh-users/zsh-completions" # Additional completion definitions for Zsh.
-zplug "zsh-users/zsh-autosuggestions" # Fish-like autosuggestions for zsh bundle.
-zplug "zsh-users/zsh-history-substring-search" # Fish shell's history search functionality bundle
 #zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # Async for zsh, used by pure theme
 # jkzplug "mafredri/zsh-async", from:github, defer:0
-# Load completion library forhose sweet [tab] squares
-zplug "lib/completion", from:oh-my-zsh, ignore:oh-my-zsh.sh
-# Syntax highlighting for commands, load last
-zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:2
+
+#---- prompt / history plugins
+zplug "zsh-users/zsh-completions" # Additional completion definitions for Zsh.
+zplug "zsh-users/zsh-autosuggestions" # Fish-like autosuggestions for zsh bundle.
+zplug "lib/completion", from:oh-my-zsh, ignore:oh-my-zsh.sh # Load completion library for sweet [tab] squares
+zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:1 # Syntax highlighting for commands, load last
+zplug "zsh-users/zsh-history-substring-search", from:github, defer:2 # Fish shell's history search functionality bundle
 
 #-- dev autocompletion
 zplug "plugins/bundler", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
