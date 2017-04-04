@@ -8,8 +8,9 @@ turnspike's nix settings. Sane defaults and tweaks for:
 
 # Installation
 
-Requires [homeshick](https://github.com/andsens/homeshick) or homesick.
+From the project directory, run:
 
-Just run:
+    > chmod u+x install.sh
+    > ./install.sh
 
-    homeshick clone turnspike/dotfiles
+Note - this will also install [homeshick](https://github.com/andsens/homeshick) if needed.
