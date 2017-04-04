@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# UNCOMMENT TO BENCHMARK
+BENCHMARK=1 && zmodload zsh/zprof
+
 #-- use homeschick for dotfile mgmt:
 #   https://github.com/andsens/homeshick
 
@@ -22,6 +25,10 @@ fi
 #-- init zplug
 source $ZPLUG_HOME/init.zsh
 
+COMPLETION_WAITING_DOTS="true"
+DISABLE_CORRECTION="true"
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
+
 #-- plugin list
 #zplug "zsh-users/zsh-syntax-highlighting"
 #zplug "plugins/vi-mode", from:oh-my-zsh
@@ -40,21 +47,31 @@ export ENHANCD_DISABLE_HOME=1
 alias cdh="cd -"
 
 zplug "mollifier/cd-gitroot" # cd-gitroot to move up to git toplevel folder
-# zplug "plugins/git", from:oh-my-zsh
 # zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 #zplug "themes/af-magic", from:oh-my-zsh
 #zplug "themes/clean", from:oh-my-zsh
-#zplug "plugins/colorize", from:oh-my-zsh
+zplug "plugins/colorize", from:oh-my-zsh, ignore:oh-my-zsh.sh
 #zplug "plugins/zsh_reload", from:oh-my-zsh
-#zplug "zsh-users/zsh-completions"
-#zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "chrissicool/zsh-256color" # ZSH plugin enhancesheerminal environment with 256 colors.
+zplug "zsh-users/zsh-completions" # Additional completion definitions for Zsh.
+zplug "zsh-users/zsh-autosuggestions" # Fish-like autosuggestions for zsh bundle.
+zplug "zsh-users/zsh-history-substring-search" # Fish shell's history search functionality bundle
+#zplug "zsh-users/zsh-syntax-highlighting", defer:2
+# Async for zsh, used by pure theme
+# jkzplug "mafredri/zsh-async", from:github, defer:0
+# Load completion library forhose sweet [tab] squares
+zplug "lib/completion", from:oh-my-zsh, ignore:oh-my-zsh.sh
+# Syntax highlighting for commands, load last
+zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:2
 
 #-- dev autocompletion
-#zplug "plugins/bundler", from:oh-my-zsh
-#zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/heroku", from:oh-my-zsh, ignore:oh-my-zsh.sh
-#zplug "plugins/rbenv", from:oh-my-zsh
+zplug "plugins/bundler", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+zplug "plugins/git", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+zplug "plugins/heroku", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+zplug "plugins/rbenv", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+zplug "plugins/gem", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+zplug "plugins/npm", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+zplug "plugins/yarn", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 
 #-- theme
 zplug "frmendes/geometry" # nice theme
