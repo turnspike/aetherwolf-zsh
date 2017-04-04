@@ -3,7 +3,7 @@
 # UNCOMMENT TO BENCHMARK
 BENCHMARK=1 && zmodload zsh/zprof
 
-#-- use homeschick for dotfile mgmt:
+# ---- use homeschick for dotfile mgmt:
 #   https://github.com/andsens/homeshick
 
 export HS_HOME=$HOME/.homesick/repos/homeshick
@@ -11,25 +11,25 @@ source $HS_HOME/homeshick.sh # init
 fpath=($HS_HOME/completions $fpath) # add hs to zsh autocompletion path
 homeshick --quiet refresh # update configs from git
 
-#-- use zplug plugin manager:
+# ---- use zplug plugin manager:
 #   https://github.com/zplug/zplug
 
 export ZPLUG_HOME=$HOME/.zplug # TODO xdg this
 
-#-- install zplug if needed
+# ---- install zplug if needed
 if [[ ! -d $ZPLUG_HOME ]]; then
 	git clone https://github.com/zplug/zplug $ZPLUG_HOME
 	source $ZPLUG_HOME/init.zsh && zplug update --self
 fi
 
-#-- init zplug
+# ---- init zplug
 source $ZPLUG_HOME/init.zsh
 
 COMPLETION_WAITING_DOTS="true"
 DISABLE_CORRECTION="true"
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 
-#-- plugin list
+# ---- plugin list
 #zplug "zsh-users/zsh-syntax-highlighting"
 #zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "junegunn/fzf-bin"
@@ -57,14 +57,14 @@ zplug "chrissicool/zsh-256color" # ZSH plugin enhancesheerminal environment with
 # Async for zsh, used by pure theme
 # jkzplug "mafredri/zsh-async", from:github, defer:0
 
-#---- prompt / history plugins
-zplug "zsh-users/zsh-completions" # Additional completion definitions for Zsh.
-zplug "zsh-users/zsh-autosuggestions" # Fish-like autosuggestions for zsh bundle.
+# ---- fish shell style completion & history plugins
 zplug "lib/completion", from:oh-my-zsh, ignore:oh-my-zsh.sh # Load completion library for sweet [tab] squares
+zplug "zsh-users/zsh-completions", from:github # Additional completion definitions for Zsh.
+zplug "zsh-users/zsh-autosuggestions", from:github # Fish-like autosuggestions for zsh bundle.
 zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:1 # Syntax highlighting for commands, load last
 zplug "zsh-users/zsh-history-substring-search", from:github, defer:2 # Fish shell's history search functionality bundle
 
-#-- dev autocompletion
+# ---- dev autocompletion
 zplug "plugins/bundler", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 zplug "plugins/git", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 zplug "plugins/heroku", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
@@ -73,12 +73,12 @@ zplug "plugins/gem", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 zplug "plugins/npm", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 zplug "plugins/yarn", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 
-#-- theme
+# ---- theme
 zplug "frmendes/geometry" # nice theme
 #GEOMETRY_SYMBOL_PROMPT="∴"
 GEOMETRY_PROMPT_PLUGINS=(exec_time git)
 
-#-- install packages as needed
+# ---- install packages as needed
 if ! zplug check --verbose; then
 	printf "Install packages? [y/N]: "
 	if read -q; then
@@ -88,7 +88,7 @@ if ! zplug check --verbose; then
 	fi
 fi
 
-#-- load plugins
+# ---- load plugins
 #zplug load --verbose
 zplug load
 
