@@ -25,6 +25,9 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
+#---- autocomplete
+setopt MENU_COMPLETE
+
 #---- input
 KEYTIMEOUT=1 # 10ms for key sequences
 
