@@ -26,7 +26,7 @@ setopt HIST_VERIFY               # Don't execute immediately upon history expans
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 #---- autocomplete
-setopt MENU_COMPLETE
+#setopt MENU_COMPLETE
 
 #---- input
 KEYTIMEOUT=1 # 10ms for key sequences
