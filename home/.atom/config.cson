@@ -11,6 +11,9 @@
       indent_size: 2
   "autocomplete-plus":
     enableAutoActivation: false
+  "autocomplete-ruby":
+    port: 50445
+    rsensePath: "/Users/work/.gem/ruby/2.2.3/bin/rsense"
   "bracket-matcher":
     autocompleteBrackets: false
   core:
