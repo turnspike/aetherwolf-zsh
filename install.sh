@@ -6,4 +6,4 @@ if [[ ! -d $HS_HOME ]]; then
 fi
 source $HS_HOME/homeshick.sh            
 
-homeshick clone git@gitlab.com:turnspike/dotfiles.git
+homeshick clone git@github.com:turnspike/dotfiles.git
