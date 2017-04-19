@@ -1,8 +1,8 @@
-# ætherwülf
+# ætherwolf
 
 _glide through zsh like a predator._
 
-ætherwülf is a set of modular configs for zsh and friends with minimum typing and maximum feedback. Make any MacOS or Linux shell yours in seconds with a few simple commands. Powered by the excellent [Homesick](https://github.com/technicalpickles/homesick).
+ætherwolf is a set of modular configs for zsh and friends with minimum typing and maximum feedback. Make any MacOS or Linux shell yours in seconds with a few simple commands. Powered by the excellent [Homesick](https://github.com/technicalpickles/homesick).
 
 (Instructions on how to add user settings coming very soon)
 
@@ -11,13 +11,13 @@ _glide through zsh like a predator._
 ## Installation
 
     gem install homesick
-    homesick clone turnspike/aetherwulf
-    homesick symlink aetherwulf
+    homesick clone turnspike/aetherwolf
+    homesick symlink aetherwolf
     
 ## nVim settings (optional)
 
-    homesick clone turnspike/aetherwulf-nvim
-    homesick symlink aetherwulf-nvim
+    homesick clone turnspike/aetherwolf-nvim
+    homesick symlink aetherwolf-nvim
     
 ***
 
