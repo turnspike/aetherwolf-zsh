@@ -8,13 +8,18 @@ turnspike's nix settings. Sane defaults and tweaks for:
 
 # Installation
 
-From the project directory, run:
+* Requires Ruby (sudo apt install ruby)
 
-    chmod u+x install.sh
-    ./install.sh
+    gem install homesick
+    homesick clone turnspike/dotfiles
+    homesick symlink dotfiles
 
-Note - this will also install [homeshick](https://github.com/andsens/homeshick) if needed.
+# Termux (Android)
 
-# Termux
+    apt install zsh git coreutils ruby
+    chsh -s zsh
+    [restart termux session]
 
-Homeshick seems to stall on "homeshick link", it seems incompatible with termux.
+    gem install homesick
+    homesick clone turnspike/dotfiles
+    homesick symlink dotfiles
