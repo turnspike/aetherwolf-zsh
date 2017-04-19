@@ -1,9 +1,7 @@
 #!/bin/bash
 
-HS_HOME=$HOME/.homesick/repos/homeshick
-if [[ ! -d $HS_HOME ]]; then
-    git clone git://github.com/andsens/homeshick.git $HS_HOME
-fi
-source $HS_HOME/homeshick.sh            
+# TODO install and chsh to zsh if needed
 
-homeshick clone git@github.com:turnspike/dotfiles.git
+gem install homesick
+homesick clone turnspike/dotfiles
+homesick symlink dotfiles
