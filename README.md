@@ -27,7 +27,7 @@ _glide through zsh like a predator._
   * fuzzy find and bookmarks for speedy directory movement
   * visual feedback and autocompletion wherever possible
   * clean division of base settings, user settings and secrets
-  * easily override settings at a user and machine level
+  * modular, so easy to find and override properties
   * stunts and tricks to feel like a wizard
   * has a purty mouth
 
