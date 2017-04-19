@@ -1,15 +1,15 @@
 #!/bin/zsh
 
 # UNCOMMENT TO BENCHMARK
-BENCHMARK=1 && zmodload zsh/zprof
+#BENCHMARK=1 && zmodload zsh/zprof
 
 # ---- use homeschick for dotfile mgmt:
 #   https://github.com/andsens/homeshick
 
-export HS_HOME=$HOME/.homesick/repos/homeshick
-source $HS_HOME/homeshick.sh # init
-fpath=($HS_HOME/completions $fpath) # add hs to zsh autocompletion path
-homeshick --quiet refresh # update configs from git
+#export HS_HOME=$HOME/.homesick/repos/homeshick
+#source $HS_HOME/homeshick.sh # init
+#fpath=($HS_HOME/completions $fpath) # add hs to zsh autocompletion path
+#homeshick --quiet refresh # update configs from git
 
 # ---- use zplug plugin manager:
 #   https://github.com/zplug/zplug
@@ -21,6 +21,9 @@ if [[ ! -d $ZPLUG_HOME ]]; then
 	git clone https://github.com/zplug/zplug $ZPLUG_HOME
 	source $ZPLUG_HOME/init.zsh && zplug update --self
 fi
+
+GEOMETRY_ASYNC_TMP_FILENAME=~/.geometry_rprompt_info
+GEOMETRY_PROMPT_PLUGINS=(exec_time git)
 
 # ---- init zplug
 source $ZPLUG_HOME/init.zsh
@@ -76,7 +79,6 @@ zplug "plugins/yarn", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 # ---- theme
 zplug "frmendes/geometry" # nice theme
 #GEOMETRY_SYMBOL_PROMPT="∴"
-GEOMETRY_PROMPT_PLUGINS=(exec_time git)
 
 # ---- install packages as needed
 if ! zplug check --verbose; then

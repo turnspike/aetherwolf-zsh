@@ -2,7 +2,7 @@
 
 #---- init
 ZCACHE=$XDG_CACHE_HOME/zsh
-[ -d $ZCACHE ] || mkdir $ZCACHE
+[ -d $ZCACHE ] || mkdir -p $ZCACHE
 
 #---- general
 export BLOCKSIZE=1k # set default blocksize for ls, df, du
