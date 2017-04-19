@@ -18,7 +18,7 @@ turnspike's nix settings. Sane defaults and tweaks for:
 
 # Termux (Android)
 
-    apt install zsh git coreutils ruby
+    apt install zsh git coreutils ruby nvim
     chsh -s zsh
     [restart termux session]
 
