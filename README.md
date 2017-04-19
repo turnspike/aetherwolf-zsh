@@ -61,6 +61,8 @@ _glide through zsh like a predator._
 
 ### Termux (Android)
 
+Note: the nvim leader key (space) is currently bugged in termux, will be fixed soon. 
+
     apt install zsh git coreutils ruby nvim
     chsh -s zsh
     [restart termux session]
