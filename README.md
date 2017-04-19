@@ -8,8 +8,10 @@ turnspike's nix settings. Sane defaults and tweaks for:
 
 # Installation
 
-* Requires Ruby (sudo apt install ruby)
-
+    sudo apt install zsh ruby
+    chsh -s `which zsh`
+    [restart terminal]
+    
     gem install homesick
     homesick clone turnspike/dotfiles
     homesick symlink dotfiles
@@ -23,3 +25,4 @@ turnspike's nix settings. Sane defaults and tweaks for:
     gem install homesick
     homesick clone turnspike/dotfiles
     homesick symlink dotfiles
+    
