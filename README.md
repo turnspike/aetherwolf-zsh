@@ -36,6 +36,7 @@ _glide through zsh like a predator._
 
   * zsh + plugins
   * byobu
+  * git
   * nvim (optional)
 
 ## Coming soon
