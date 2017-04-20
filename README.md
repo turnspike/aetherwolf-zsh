@@ -47,6 +47,8 @@ _glide through zsh like a predator._
   * news
   * docco
 
+***
+
 ## Dependencies
 
 ### MacOS
