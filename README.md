@@ -6,6 +6,18 @@ _glide through zsh like a predator._
 
 ***
 
+## Features
+
+  * apply your cli settings to any nix machine in seconds
+  * fuzzy find and bookmarks for speedy directory movement
+  * visual feedback and autocompletion wherever possible
+  * clean division of base settings, user settings and secrets
+  * modular, so easy to find and override properties
+  * stunts and tricks to feel like a wizard
+  * has a purty mouth
+  
+*** 
+
 ## How to start
 
 ### 1. Prepare
@@ -34,16 +46,6 @@ _glide through zsh like a predator._
 You can add your secrets and user settings by editing the templates in aetherwolf-user/home/.config. Make sure this repo is kept private.
 
 ***
-
-## Features
-
-  * apply your cli settings to any nix machine in seconds
-  * fuzzy find and bookmarks for speedy directory movement
-  * visual feedback and autocompletion wherever possible
-  * clean division of base settings, user settings and secrets
-  * modular, so easy to find and override properties
-  * stunts and tricks to feel like a wizard
-  * has a purty mouth
 
 ## Core settings
 
