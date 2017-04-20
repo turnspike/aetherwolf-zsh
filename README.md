@@ -8,11 +8,10 @@ _glide through zsh like a predator._
 
 ## Features
 
-  * apply your cli settings to any nix machine in seconds
-  * fuzzy find and bookmarks for speedy directory movement
-  * visual feedback and autocompletion wherever possible
   * clean division of base settings, user settings and secrets
   * modular, so easy to find and override properties
+  * fuzzy find and bookmarks for speedy directory movement
+  * visual feedback and autocompletion wherever possible
   * stunts and tricks to feel like a wizard
   * has a purty mouth
   
