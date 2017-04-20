@@ -8,22 +8,24 @@ _glide through zsh like a predator._
 
 ***
 
-## 1. Prepare
+## How to start
+
+### 1. Prepare
 
     mkdir -p ~/dotbackup && cp -b ~/.* "$_" # backup your existing dotfiles
     gem install homesick
     
-## 2. Install
+### 2. Install
 
     homesick clone turnspike/aetherwolf
     homesick symlink aetherwolf
     
-## 3. nVim settings (optional)
+### 3. nVim settings (optional)
 
     homesick clone turnspike/aetherwolf-nvim
     homesick symlink aetherwolf-nvim
     
-## 4. Your secrets and settings 
+### 4. Your secrets and settings 
  
     homesick clone turnspike/aetherwolf-user
     homesick symlink aetherwolf-user
