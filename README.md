@@ -4,8 +4,6 @@ _glide through zsh like a predator._
 
 ætherwolf is a set of modular configs for zsh and friends with minimum typing and maximum feedback. Make any MacOS or Linux shell yours in seconds with a few simple commands. Powered by the excellent [Homesick](https://github.com/technicalpickles/homesick).
 
-***
-
 ## Features
 
   * clean division of base settings, user settings and secrets
