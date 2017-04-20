@@ -10,6 +10,7 @@ _glide through zsh like a predator._
 
 ## Installation
 
+    mkdir -p ~/dotbackup && cp -b ~/.* "$_" # backup your existing dotfiles
     gem install homesick
     homesick clone turnspike/aetherwolf
     homesick symlink aetherwolf
@@ -35,14 +36,18 @@ _glide through zsh like a predator._
 
   * zsh + plugins
   * byobu
+  * git
   * nvim (optional)
 
 ## Coming soon
 
+  * fzf
   * mutt
   * weechat
   * news
   * docco
+
+***
 
 ## Dependencies
 
