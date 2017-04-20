@@ -27,7 +27,7 @@ _glide through zsh like a predator._
   * fuzzy find and bookmarks for speedy directory movement
   * visual feedback and autocompletion wherever possible
   * clean division of base settings, user settings and secrets
-  * easily override settings at a user and machine level
+  * modular, so easy to find and override properties
   * stunts and tricks to feel like a wizard
   * has a purty mouth
 
@@ -49,13 +49,13 @@ _glide through zsh like a predator._
 ### MacOS
 
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" # install homebrew
-    brew install neovim zsh
+    brew install zsh byobu neovim
     chsh -s /bin/zsh
     [restart terminal]
   
 ### Ubuntu
 
-    sudo apt install zsh ruby nvim
+    sudo apt install ruby zsh byobu nvim 
     chsh -s `which zsh`
     [restart terminal]
 
@@ -63,6 +63,6 @@ _glide through zsh like a predator._
 
 Note: the nvim leader key (space) is currently bugged in termux, will be fixed soon. 
 
-    apt install zsh git coreutils ruby nvim
+    apt install coreutils ruby git zsh nvim
     chsh -s zsh
     [restart termux session]
