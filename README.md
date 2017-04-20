@@ -48,7 +48,7 @@ You can add your user settings by editing the templates in aetherwolf-user/home/
     homesick cd aetherwolf-secrets
     git remote set-url origin https://bitbucket.org/YOUR_USERNAME/SECRET_PRIVATE_REPO.git
 
-You can add your secrets by editing the templates in aetherwolf-user/home/.config - make sure to keep the repo private.
+You can add your secrets by editing the templates in aetherwolf-secrets/home - make sure to keep the repo private.
 
 ***
 
