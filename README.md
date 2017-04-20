@@ -8,18 +8,31 @@ _glide through zsh like a predator._
 
 ***
 
-## Installation
+## 1 Prepare
 
     mkdir -p ~/dotbackup && cp -b ~/.* "$_" # backup your existing dotfiles
     gem install homesick
+    
+## 2 Install
+
     homesick clone turnspike/aetherwolf
     homesick symlink aetherwolf
     
-## nVim settings (optional)
+## 3 nVim settings (optional)
 
     homesick clone turnspike/aetherwolf-nvim
     homesick symlink aetherwolf-nvim
     
+## 4 Your secrets and settings 
+ 
+    homesick clone turnspike/aetherwolf-user
+    homesick symlink aetherwolf-user
+    homesick cd aetherwolf-user
+    git remote set-url origin https://bitbucket.org/YOUR_USERNAME/SECRET_PRIVATE_REPO.git
+    cd home/.config
+
+You can add your secrets and user settings by editing the templates in aetherwolf-user/home/.config. Make sure this repo is kept private.
+
 ***
 
 ## Features
