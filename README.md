@@ -10,7 +10,7 @@ _glide through zsh like a predator._
 
 ## Installation
 
-    mkdir -p ~/dotbackup && cp -b .* "$_" # backup your existing dotfiles
+    mkdir -p ~/dotbackup && cp -b ~/.* "$_" # backup your existing dotfiles
     gem install homesick
     homesick clone turnspike/aetherwolf
     homesick symlink aetherwolf
