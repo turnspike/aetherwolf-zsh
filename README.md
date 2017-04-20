@@ -39,6 +39,7 @@ _glide through zsh like a predator._
 
 ## Coming soon
 
+  * fzf
   * mutt
   * weechat
   * news
