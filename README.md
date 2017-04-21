@@ -6,10 +6,9 @@ _glide through zsh like a predator._
 
 ## Features
 
-  * clean division of base settings, user settings and secrets
-  * modular, so easy to find and override properties
+  * keeps secrets secret and shortcuts available
+  * visual feedback and completion wherever possible
   * fuzzy find and bookmarks for speedy directory movement
-  * visual feedback and autocompletion wherever possible
   * stunts and tricks to feel like a wizard
   * has a purty mouth
   
@@ -22,25 +21,33 @@ _glide through zsh like a predator._
     mkdir -p ~/dotbackup && cp -b ~/.* "$_" # backup your existing dotfiles
     gem install homesick
     
-### 2. Install
+### 2. Base Settings
 
     homesick clone turnspike/aetherwolf
     homesick symlink aetherwolf
     
-### 3. nVim settings (optional)
+### 3. nVim Settings (optional)
 
     homesick clone turnspike/aetherwolf-nvim
     homesick symlink aetherwolf-nvim
-    
-### 4. Your secrets and settings 
- 
+
+### 4. Your Settings
+
     homesick clone turnspike/aetherwolf-user
     homesick symlink aetherwolf-user
     homesick cd aetherwolf-user
-    git remote set-url origin https://bitbucket.org/YOUR_USERNAME/SECRET_PRIVATE_REPO.git
-    cd home/.config
+    git remote set-url origin https://github.com/YOUR_USERNAME/SETTINGS_REPO.git # this repo must exist on github.com
 
-You can add your secrets and user settings by editing the templates in aetherwolf-user/home/.config. Make sure this repo is kept private.
+You can add your user settings by editing the templates in aetherwolf-user/home/.config
+
+### 5. Your Secrets 
+ 
+    homesick clone turnspike/aetherwolf-secrets
+    homesick symlink aetherwolf-secrets
+    homesick cd aetherwolf-secrets
+    git remote set-url origin https://bitbucket.org/YOUR_USERNAME/SECRET_PRIVATE_REPO.git  # this repo must exist on bitbucket.org
+
+You can add your secrets by editing the templates in aetherwolf-secrets/home - make sure to keep the repo private.
 
 ***
 
@@ -53,11 +60,13 @@ You can add your secrets and user settings by editing the templates in aetherwol
 
 ## Coming soon
 
+  * light and dark theme switching
   * fzf
+  * integrate keyring/credential mgmt
   * mutt
   * weechat
   * news
-  * docco
+  * more docs
 
 ***
 
