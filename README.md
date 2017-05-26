@@ -93,8 +93,6 @@ To pull any changes on another machine:
 
 ### Termux (Android)
 
-Note: the nvim leader key (space) is currently bugged in termux, will be fixed soon. 
-
     apt install coreutils ruby git zsh nvim
     chsh -s zsh
     [restart termux session]
