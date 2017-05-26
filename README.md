@@ -70,6 +70,12 @@ You can add your secrets by editing the templates in aetherwolf-secrets/home - m
 
 ***
 
+## Updating
+
+To pull any changes on another machine:
+
+    homesick pull --all
+
 ## Dependencies
 
 ### MacOS
