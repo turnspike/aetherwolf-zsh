@@ -8,6 +8,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then # homebrew configs for macos
   export PATH="/usr/local/sbin:$PATH"
   export PATH="/usr/local/opt/sqlite/bin:$PATH"
   export BYOBU_PREFIX=/usr/local
+fi
 
 # ---- load user configs
 if [ -f $ZCONF/zshenv-user.zsh ]; then
