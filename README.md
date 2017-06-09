@@ -70,6 +70,12 @@ You can add your secrets by editing the templates in aetherwolf-secrets/home - m
 
 ***
 
+## Updating
+
+To pull any changes on another machine:
+
+    homesick pull --all
+
 ## Dependencies
 
 ### MacOS
@@ -86,8 +92,6 @@ You can add your secrets by editing the templates in aetherwolf-secrets/home - m
     [restart terminal]
 
 ### Termux (Android)
-
-Note: the nvim leader key (space) is currently bugged in termux, will be fixed soon. 
 
     apt install coreutils ruby git zsh nvim
     chsh -s zsh
