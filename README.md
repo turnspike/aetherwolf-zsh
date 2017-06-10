@@ -57,11 +57,11 @@ You can add your secrets by editing the templates in aetherwolf-secrets/home - m
   * byobu
   * git
   * nvim (optional)
+  * fzf (use ctrl-t, ctrl-r, alt-c from zsh and :Fzf from nvim)
 
 ## Coming soon
 
   * light and dark theme switching
-  * fzf
   * integrate keyring/credential mgmt
   * mutt
   * weechat
