@@ -57,7 +57,7 @@ You can add your secrets by editing the templates in aetherwolf-secrets/home - m
   * byobu
   * git
   * nvim (optional)
-  * fzf (use ctrl-t, ctrl-r, alt-c from zsh and :Fzf from nvim)
+  * [fzf](http://tilvim.com/2016/01/06/fzf.html) (use ctrl-t, ctrl-r, alt-c from zsh and :Fzf from nvim)
 
 ## Coming soon
 
