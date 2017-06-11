@@ -104,11 +104,25 @@ alias eb="emacsbare"
 alias eg="emacsclient -c -n -a ''" # gui emacs
 alias emacsbare="emacs -nw -Q --eval \"(load-theme 'misterioso)\""
 alias g="git"
-alias hs="homeshick"
+alias hs="homesick"
 alias nv="nvim"
 #alias vim="nvim"
 alias oldvim="/usr/bin/vim"
 alias vimold="/usr/bin/vim"
+
+# make vim follow symlinks into their actual working dir to assist context-sensitive plugins such as fugitive and fireplace
+function vim() {
+  args=()
+  for i in $@; do
+    if [[ -h $i ]]; then
+      args+=`readlink $i`
+    else
+      args+=$i
+    fi
+  done
+
+  nvim -p "${args[@]}"
+}
 
 #-- misc
 alias shellname="ps -p $$"
