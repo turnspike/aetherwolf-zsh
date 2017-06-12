@@ -104,7 +104,7 @@ zplug load
 #
 
 # load fzf shell extensions
-[ -f ~/.fzf.zsh] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # autojump shell extension
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
