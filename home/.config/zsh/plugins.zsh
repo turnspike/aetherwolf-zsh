@@ -70,13 +70,14 @@ zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:1 # Syntax highlig
 zplug "zsh-users/zsh-history-substring-search", from:github, defer:2 # Fish shell's history search functionality bundle
 
 # ---- dev autocompletion
-zplug "plugins/bundler", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 zplug "plugins/git", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 zplug "plugins/heroku", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
-zplug "plugins/rbenv", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
-zplug "plugins/gem", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
-zplug "plugins/npm", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
-zplug "plugins/yarn", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+# TODO: lazy load these to improve startup time
+#zplug "plugins/rbenv", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+#zplug "plugins/bundler", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+#zplug "plugins/gem", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+#zplug "plugins/npm", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+#zplug "plugins/yarn", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 
 # ---- theme
 zplug "frmendes/geometry" # nice theme
