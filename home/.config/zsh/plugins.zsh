@@ -18,6 +18,7 @@ export ZPLUG_HOME=$HOME/.zplug # TODO xdg this
 
 # ---- install zplug if needed
 if [[ ! -d $ZPLUG_HOME ]]; then
+	pp_msg "installing zplug..."
 	git clone https://github.com/zplug/zplug $ZPLUG_HOME
 	source $ZPLUG_HOME/init.zsh && zplug update --self
 fi
@@ -92,8 +93,8 @@ if ! zplug check --verbose; then
 fi
 
 # ---- load plugins
-#zplug load --verbose
-zplug load
+zplug load --verbose
+#zplug load
 
 # # https://coderwall.com/p/yw96rg/display-all-commands-offered-by-your-installed-oh-my-zsh-plugins
 # function plug_opts() {
