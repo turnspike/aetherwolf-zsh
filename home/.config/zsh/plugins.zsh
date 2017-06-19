@@ -35,9 +35,16 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 # ---- plugin list
 #zplug "zsh-users/zsh-syntax-highlighting"
 #zplug "plugins/vi-mode", from:oh-my-zsh
+
+# fuzzy finder
+# Use ag instead of the default find command for listing candidates.
+_fzf_compgen_path() {
+  ag -g "" "$1"
+}
 zplug "junegunn/fzf-bin"
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+source ~/.fzf.zsh
 
 zplug "jocelynmallon/zshmarks" # nice folder bookmarking
 #zplug "themes/pygmalion", from:oh-my-zs
