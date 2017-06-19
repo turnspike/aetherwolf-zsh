@@ -18,6 +18,7 @@ export ZPLUG_HOME=$HOME/.zplug # TODO xdg this
 
 # ---- install zplug if needed
 if [[ ! -d $ZPLUG_HOME ]]; then
+	pp_msg "installing zplug..."
 	git clone https://github.com/zplug/zplug $ZPLUG_HOME
 	source $ZPLUG_HOME/init.zsh && zplug update --self
 fi
@@ -36,12 +37,11 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 #zplug "zsh-users/zsh-syntax-highlighting"
 #zplug "plugins/vi-mode", from:oh-my-zsh
 
-# fuzzy finder
+zplug "junegunn/fzf-bin"
 # Use ag instead of the default find command for listing candidates.
 _fzf_compgen_path() {
   ag -g "" "$1"
 }
-zplug "junegunn/fzf-bin"
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 source ~/.fzf.zsh
@@ -75,13 +75,14 @@ zplug "zsh-users/zsh-syntax-highlighting", from:github, defer:1 # Syntax highlig
 zplug "zsh-users/zsh-history-substring-search", from:github, defer:2 # Fish shell's history search functionality bundle
 
 # ---- dev autocompletion
-zplug "plugins/bundler", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 zplug "plugins/git", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 zplug "plugins/heroku", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
-zplug "plugins/rbenv", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
-zplug "plugins/gem", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
-zplug "plugins/npm", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
-zplug "plugins/yarn", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+# TODO: lazy load these to improve startup time
+#zplug "plugins/rbenv", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+#zplug "plugins/bundler", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+#zplug "plugins/gem", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+#zplug "plugins/npm", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+#zplug "plugins/yarn", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 
 # ---- theme
 zplug "frmendes/geometry" # nice theme
@@ -98,8 +99,8 @@ if ! zplug check --verbose; then
 fi
 
 # ---- load plugins
-#zplug load --verbose
-zplug load
+zplug load --verbose
+#zplug load
 
 # # https://coderwall.com/p/yw96rg/display-all-commands-offered-by-your-installed-oh-my-zsh-plugins
 # function plug_opts() {
@@ -108,4 +109,10 @@ zplug load
 # echo "\n\nPlugin: $plugin"; grep -r "^function \w*" $PLUGIN_PATH$plugin | awk '{print $2}' | sed 's/()//'| tr '\n' ', '; grep -r "^alias" $PLUGIN_PATH$plugin | awk '{print $2}' | sed 's/=.*//' |  tr '\n' ', '
 # done
 #
+
+# load fzf shell extensions
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# autojump shell extension
+#[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
 pp_msg "zplug started."

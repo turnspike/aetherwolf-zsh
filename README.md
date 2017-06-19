@@ -57,11 +57,11 @@ You can add your secrets by editing the templates in aetherwolf-secrets/home - m
   * byobu
   * git
   * nvim (optional)
+  * [fzf](http://tilvim.com/2016/01/06/fzf.html) (use ctrl-t, ctrl-r, alt-c from zsh and :Fzf from nvim)
 
 ## Coming soon
 
   * light and dark theme switching
-  * fzf
   * integrate keyring/credential mgmt
   * mutt
   * weechat
@@ -69,6 +69,12 @@ You can add your secrets by editing the templates in aetherwolf-secrets/home - m
   * more docs
 
 ***
+
+## Updating
+
+To pull any changes on another machine:
+
+    homesick pull --all
 
 ## Dependencies
 
@@ -86,8 +92,6 @@ You can add your secrets by editing the templates in aetherwolf-secrets/home - m
     [restart terminal]
 
 ### Termux (Android)
-
-Note: the nvim leader key (space) is currently bugged in termux, will be fixed soon. 
 
     apt install coreutils ruby git zsh nvim
     chsh -s zsh

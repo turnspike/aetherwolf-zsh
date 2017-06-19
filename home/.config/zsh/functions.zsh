@@ -33,3 +33,5 @@ extract() {
 zsh_reload() {
     zplug clear; source ~/.zshrc
 }
+
+# TODO: function cdp - cd to parent folder of symlinked file
