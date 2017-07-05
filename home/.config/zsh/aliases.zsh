@@ -31,12 +31,12 @@ alias bl="showmarks" # list bookmarked dirs
 alias bd="deletemark" # delete bookmark x
 
 #-- temp bookmark commands
-alias b='export hdbook=$(pwd)' # bookmark current directory
-alias r='cd "$hdbook"' # return to previously bookmarked directory
+alias bb='export hdbook=$(pwd)' # bookmark current directory
+alias br='cd "$hdbook"' # return to previously bookmarked directory
 
 #-- byobu commands
-alias bb="byobu"
-alias br="/usr/lib/byobu/include/tmux-detach-all-but-current-client"
+#alias bb="byobu"
+alias byobu-reset="/usr/lib/byobu/include/tmux-detach-all-but-current-client"
 
 #-- coding
 alias ct="ctags -R -f ./.git/tags ."
@@ -57,6 +57,7 @@ alias nv="nvim"
 alias vim="nvim"
 alias oldvim="/usr/bin/vim"
 alias vimold="/usr/bin/vim"
+alias r="ranger"
 
 # FIXME: the below started throwing a floating point error for no apparent reason.
 ## make vim follow symlinks into their actual working dir to assist context-sensitive plugins such as fugitive and fireplace
