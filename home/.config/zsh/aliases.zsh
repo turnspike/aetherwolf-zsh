@@ -12,13 +12,14 @@ else
 fi
 
 alias ..="cd ./.."
-alias cdu="cd-gitroot"
+alias cdr="cd-gitroot"
 
 #-- system
 alias md="mkdir"
 alias rd="rmdir"
 alias t="trash" # delete files with github.com/andreafrancia/trash-cli
 #alias rm='echo "use trash instead, or \rm to bypass"; false'
+alias dirsize="du -sh"
 
 #-- reload various things, eg to apply config changes w
 alias zsh-reload="zplug clean;source ~/.zshrc"
