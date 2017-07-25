@@ -42,6 +42,7 @@ zplug "junegunn/fzf-bin"
 #export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+source ~/.fzf.zsh
 
 zplug "jocelynmallon/zshmarks" # nice folder bookmarking
 #zplug "themes/pygmalion", from:oh-my-zs
