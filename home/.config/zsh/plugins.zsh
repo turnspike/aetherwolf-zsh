@@ -38,7 +38,9 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 #zplug "plugins/vi-mode", from:oh-my-zsh
 
 zplug "junegunn/fzf-bin"
-export FZF_DEFAULT_COMMAND='ag -g ""'
+#export FZF_DEFAULT_COMMAND='ag -g ""'
+#export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 zplug "jocelynmallon/zshmarks" # nice folder bookmarking
@@ -61,6 +63,21 @@ zplug "chrissicool/zsh-256color" # ZSH plugin enhancesheerminal environment with
 #zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # Async for zsh, used by pure theme
 # jkzplug "mafredri/zsh-async", from:github, defer:0
+#zplug "willghatch/zsh-snippets" # snippet mgr, binds to m-x
+
+# ---- snippets (using pet)
+function prev() {
+  PREV=$(fc -lrn | head -n 1)
+    sh -c "pet new `printf %q "$PREV"`"
+}
+function pet-select() {
+  BUFFER=$(pet search --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle redisplay
+}
+zle -N pet-select
+stty -ixon
+bindkey '^s' pet-select
 
 # ---- fish shell style completion & history plugins
 zplug "lib/completion", from:oh-my-zsh, ignore:oh-my-zsh.sh # Load completion library for sweet [tab] squares
@@ -71,17 +88,18 @@ zplug "zsh-users/zsh-history-substring-search", from:github, defer:2 # Fish shel
 
 # ---- dev autocompletion
 zplug "plugins/git", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
-zplug "plugins/heroku", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 # TODO: lazy load these to improve startup time
+#zplug "plugins/heroku", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 #zplug "plugins/rbenv", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
-#zplug "plugins/bundler", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
-#zplug "plugins/gem", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+zplug "plugins/bundler", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+zplug "plugins/gem", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 #zplug "plugins/npm", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 #zplug "plugins/yarn", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 
 # ---- theme
-zplug "frmendes/geometry" # nice theme
+#zplug "frmendes/geometry" # nice theme
 #GEOMETRY_SYMBOL_PROMPT="∴"
+zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
 
 # ---- install packages as needed
 if ! zplug check --verbose; then
@@ -94,8 +112,8 @@ if ! zplug check --verbose; then
 fi
 
 # ---- load plugins
-zplug load --verbose
-#zplug load
+#zplug load --verbose
+zplug load
 
 # # https://coderwall.com/p/yw96rg/display-all-commands-offered-by-your-installed-oh-my-zsh-plugins
 # function plug_opts() {
