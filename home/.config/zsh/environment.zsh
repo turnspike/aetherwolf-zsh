@@ -39,3 +39,7 @@ export LC_ALL=en_US.UTF-8
 
 #---- apps
 export ENHANCD_FILTER=fzy;
+
+#---- ruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
