@@ -7,6 +7,7 @@ export ZCONF=$XDG_CONFIG_HOME/zsh # we keep zsh config in ~/.config/zsh
 if [[ "$OSTYPE" == "darwin"* ]]; then # homebrew configs for macos
   export PATH="/usr/local/sbin:$PATH"
   export PATH="/usr/local/opt/sqlite/bin:$PATH"
+  export PATH="$PATH:$HOME/.composer/vendor/bin"
   export BYOBU_PREFIX=/usr/local
 fi
 
