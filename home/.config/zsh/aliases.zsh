@@ -3,11 +3,13 @@
 #-- directories
 if [[ "$(uname)" = "Darwin" ]]; then # macos uses a different 'ls'
 	export CLICOLOR=1
-	export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-	export LSCOLORS=exxxcxdxdxexexadagacad
-	alias l="ls -afhG"
-	alias l="gls -ahF --group-directories-first --color=always"
-	alias ll="ls -afhgG"
+	#export LSCOLORS=exxxcxdxdxexexadagacad
+	# FIXME this isn't working on dirs
+	eval $(gdircolors)
+	#eval "`gdircolors -b $XDG_CONFIG_HOME/zsh/.dir_colors`" # FIXME this isn't working
+	#alias l="ls -afhG"
+	alias l="gls -ahF --group-directories-first --color=always" # use gnu ls
+	#alias ll="ls -afhgG"
 	#alias l="exa -alG"
 	alias ll="exa -alG"
 else
