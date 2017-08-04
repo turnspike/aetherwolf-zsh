@@ -4,10 +4,12 @@
 if [[ "$(uname)" = "Darwin" ]]; then # macos uses a different 'ls'
 	export CLICOLOR=1
 	export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+	export LSCOLORS=exxxcxdxdxexexadagacad
 	alias l="ls -afhG"
+	alias l="gls -ahF --group-directories-first --color=always"
 	alias ll="ls -afhgG"
-	alias l="exa -alG"
-	alias ll="exa -al"
+	#alias l="exa -alG"
+	alias ll="exa -alG"
 else
 	alias l="ls -ah --color --group-directories-first"
 	alias ll="ls -ahl --color --group-directories-first"
