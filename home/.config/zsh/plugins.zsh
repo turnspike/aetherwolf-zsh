@@ -23,8 +23,8 @@ if [[ ! -d $ZPLUG_HOME ]]; then
 	source $ZPLUG_HOME/init.zsh && zplug update --self
 fi
 
-GEOMETRY_ASYNC_TMP_FILENAME=~/.geometry_rprompt_info
-GEOMETRY_PROMPT_PLUGINS=(exec_time git)
+#GEOMETRY_ASYNC_TMP_FILENAME=~/.geometry_rprompt_info
+#GEOMETRY_PROMPT_PLUGINS=(exec_time git)
 
 # ---- init zplug
 source $ZPLUG_HOME/init.zsh
@@ -90,7 +90,7 @@ zplug "zsh-users/zsh-history-substring-search", from:github, defer:2 # Fish shel
 # ---- dev autocompletion
 zplug "plugins/git", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 # TODO: lazy load these to improve startup time
-#zplug "plugins/heroku", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
+zplug "plugins/heroku", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 #zplug "plugins/rbenv", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 zplug "plugins/bundler", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
 zplug "plugins/gem", from:oh-my-zsh, ignore:oh-my-zsh.sh, defer:2
