@@ -9,6 +9,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then # homebrew configs for macos
   export PATH="/usr/local/opt/sqlite/bin:$PATH"
   export PATH="$PATH:$HOME/.composer/vendor/bin"
   export BYOBU_PREFIX=/usr/local
+	export M2_REPO="~/.m2"
 fi
 
 # ---- load user configs

@@ -4,14 +4,14 @@
 if [[ "$(uname)" = "Darwin" ]]; then # macos uses a different 'ls'
 	export CLICOLOR=1
 	#export LSCOLORS=exxxcxdxdxexexadagacad
-	# FIXME this isn't working on dirs
-	eval $(gdircolors)
-	#eval "`gdircolors -b $XDG_CONFIG_HOME/zsh/.dir_colors`" # FIXME this isn't working
+	#eval $(gdircolors)
+	source "$XDG_CONFIG_HOME/zsh/.dir_colors"
 	#alias l="ls -afhG"
 	alias l="gls -ahF --group-directories-first --color=always" # use gnu ls
 	#alias ll="ls -afhgG"
 	#alias l="exa -alG"
-	alias ll="exa -alG"
+	#alias ll="exa -alG"
+	alias ll="exa -abghl --git --color=automatic"
 else
 	alias l="ls -ah --color --group-directories-first"
 	alias ll="ls -ahl --color --group-directories-first"
@@ -65,6 +65,7 @@ alias vim="nvim"
 alias oldvim="/usr/bin/vim"
 alias vimold="/usr/bin/vim"
 alias r="ranger"
+alias c='pygmentize -O style=borland -f console256 -g' # `cat` with pretty colors. requires: pip install -U Pygments
 
 # FIXME: the below started throwing a floating point error for no apparent reason.
 ## make vim follow symlinks into their actual working dir to assist context-sensitive plugins such as fugitive and fireplace
@@ -84,3 +85,4 @@ alias r="ranger"
 #-- misc
 alias shellname="ps -p $$"
 alias bigfiles="du -ah /home | sort -n -r | head -n 15"
+alias sshhosts="grep -w -i "Host" ~/.ssh/config | sed 's/Host//'"

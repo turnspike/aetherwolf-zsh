@@ -129,4 +129,12 @@ zplug load
 # autojump shell extension
 #[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+#-- use z for navigation
+# https://github.com/rupa/z
+if [ -e $HOME/bin/z/z.sh ]; then
+	#TODO set $_Z_DATA to use ~/.cache
+	. $HOME/bin/z/z.sh
+	pp_msg "loaded z for navigation"
+fi
+
 pp_msg "zplug started."
